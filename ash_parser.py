@@ -69,9 +69,18 @@ def main():
                 if "alphadance" in br.lower():
                     br = br.split("-")
                     if "dnd" in block_name.lower() or "jnj" in block_name.lower():
-                        sname, fname, *_ = br[2].split("(")[0].split()
+                        for part in br:
+                            if "alphadance" in part.lower():
+                                break
+                        try:
+                            sname, fname, *_ = part.split("(")[0].split()
+                        except ValueError:
+                            print("!!! Error parsing input:", br)
                         vkid = find_id(name2find=sname + " " + fname)
-                        blocks[block_name].append(br[0] + " - [{}|{} {}]".format(vkid, fname, sname))
+                        for part in br:
+                            if "место" in part.lower():
+                                break
+                        blocks[block_name].append(part + " - [{}|{} {}]".format(vkid, fname, sname))
                     else:
                         sname1, fname1, *_ = br[2].split("(")[0].split()
                         vkid1 = find_id(name2find=sname1 + " " + fname1)
