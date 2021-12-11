@@ -31,9 +31,6 @@ def main():
     print(args)
     if args["upd"] is None:
         args["upd"] = 10
-    else:
-        args["upd"] = int(args["upd"])
-    
     if args["upd"] > 0:
         update_data_base(int(args["upd"]))
         return

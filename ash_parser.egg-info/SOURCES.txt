@@ -1,0 +1,8 @@
+README.md
+setup.py
+ash_parser.egg-info/PKG-INFO
+ash_parser.egg-info/SOURCES.txt
+ash_parser.egg-info/dependency_links.txt
+ash_parser.egg-info/entry_points.txt
+ash_parser.egg-info/requires.txt
+ash_parser.egg-info/top_level.txt

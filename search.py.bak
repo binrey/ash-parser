@@ -34,6 +34,7 @@ def load_data():
 
 def read_page(pdict, url):
     html_resp = req.get(url)
+    print(html_resp)
     soup = BeautifulSoup(html_resp.text, 'lxml')
     people = soup.findAll("a", class_="mem_link")
 
@@ -55,7 +56,6 @@ def read_page(pdict, url):
                         n_updated += 1
 
     result = False
-    
     print("..." + url[-40:], end="")
     if n_new + n_updated:
         print(": new users {:3}, updated users {:3}".format(n_new, n_updated))
